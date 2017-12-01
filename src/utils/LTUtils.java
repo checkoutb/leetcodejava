@@ -127,9 +127,54 @@ public class LTUtils
     }
     
     
+    public static void showList(List<?> list)
+    {
+        if(list == null)
+        {
+            System.out.println("list is null");
+        }else if(list.isEmpty())
+        {
+            System.out.println("list is empty");
+        }
+        else
+        {
+            int i = 0;
+            for(Object o : list)
+            {
+                System.out.print(o + ", ");
+                i++;
+                if(i % 5 == 0)
+                {
+                    System.out.println();
+                }
+            }
+        }
+    }
     
+    public static void showArray(Object[] arr)
+    {
+        for(int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + ", ");
+            if(i % 5 == 0)
+            {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
     
-    
+    public static void showArray(int[] arr) {
+        for(int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + ", ");
+            if(i % 5 == 4)
+            {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
     
     public static void main(String[] args)
     {
@@ -150,6 +195,8 @@ public class LTUtils
         
         showTree(tree[0], 6);
     }
+
+
     
     
     

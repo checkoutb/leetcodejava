@@ -3,6 +3,7 @@ package utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import pojo.ListNode;
 import pojo.TreeNode;
 
 public class LTUtils 
@@ -174,6 +175,33 @@ public class LTUtils
             }
         }
         System.out.println();
+    }
+    
+    public static void showListNode(ListNode head)
+    {
+        while(head != null)
+        {
+            System.out.print(head.getVal() + ", ");
+            head = head.getNext();
+        }
+        System.out.println();
+    }
+    
+    public static ListNode convertIntArray2ListNode(int[] array)
+    {
+        if(array.length == 0)
+        {
+            return null;
+        }
+        ListNode head = new ListNode(array[0]);
+        ListNode temp = head;
+        for(int i = 1; i < array.length; i++)
+        {
+            temp.setNext(new ListNode(array[i]));
+            temp = temp.getNext();
+        }
+        
+        return head;
     }
     
     public static void main(String[] args)

@@ -179,10 +179,11 @@ public class LTUtils
     
     public static void showListNode(ListNode head)
     {
-        while(head != null)
+        ListNode head2 = head;
+        while(head2 != null)
         {
-            System.out.print(head.getVal() + ", ");
-            head = head.getNext();
+            System.out.print(head2.getVal() + ", ");
+            head2 = head2.getNext();
         }
         System.out.println();
     }

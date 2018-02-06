@@ -28,12 +28,20 @@ public class LT0030 {
         s = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
         words = new String[]{"fooo","barr","wing","ding","wing"};
         
+        s = "aaaaaaaa";
+        words = new String[]{"aa","aa","aa"};
+        
+        s = "abababab";
+        words = new String[]{"a","b"};
+        
         long time = System.nanoTime(); 
         List<Integer> result = Lt0030(s, words);
         System.out.println(System.nanoTime() - time);
         LTUtils.showList(result);
     }
     
+    
+    // 167/169 timeout
     public static List<Integer> Lt0030(String s, String[] words) {
         List<Integer> result = new LinkedList<>();
         
@@ -41,6 +49,7 @@ public class LT0030 {
         int i = 0;
         int j = 0;
         int m = 0;
+        int n = 0;
         int k = 0;
         int i1 = 0;
         
@@ -76,7 +85,8 @@ public class LT0030 {
         char[] charStr = s.toCharArray();
         char[] charWord = null;
         
-        int[][] wordsIndex = new int[words.length][sLength / wordsLength + 1];
+//        int[][] wordsIndex = new int[words.length][sLength / wordsLength + 1];
+        int[][] wordsIndex = new int[words.length][sLength];                // "aaaaaaaa",{"aa","aa","aa"}
         
         for(i = 0; i < wordsIndex.length; i++)
         {
@@ -94,19 +104,20 @@ public class LT0030 {
             {
                 if(charStr[j] == charWord[0])
                 {
-                    j++;
+//                    j++;
+                    n = j + 1;
                     for(m = 1; m < wordsLength; m++)
                     {
-                        if(charStr[j] != charWord[m])
+                        if(charStr[n] != charWord[m])
                         {
                             break;
                         }
-                        j++;
+                        n++;
                     }
                     if(m == wordsLength)
                     {
-                        wordsIndex[i][i1] = j - wordsLength;
-                        j--;                                    //...barfoofoobarthefoobarman,foo
+                        wordsIndex[i][i1] = n - wordsLength;
+//                        j--;                                    //...barfoofoobarthefoobarman,foo
                         i1++;
                     }
                 }
@@ -115,12 +126,13 @@ public class LT0030 {
         
         LTUtils.showArrayOfArray(wordsIndex);
         
-        int[] wordInStr = new int[wordsIndex[0].length];
+        int[] wordInStr = new int[s.length()];
         for(i = 0; i < wordInStr.length; i++)
         {
             wordInStr[i] = NOT;
         }
         
+        // should use LinekdList.
         for(i = 0; i < wordsIndex.length; i++)
         {
             for(j = 0; j < wordsIndex[0].length; j++)
@@ -131,7 +143,10 @@ public class LT0030 {
                 }
                 else
                 {
-                    wordInStr[wordsIndex[i][j] / wordsLength] = strIntMap.get(words[i]);
+                    if(wordInStr[wordsIndex[i][j]] == NOT)
+                    {
+                        wordInStr[wordsIndex[i][j]] = strIntMap.get(words[i]);
+                    }
                 }
             }
         }
@@ -153,20 +168,23 @@ public class LT0030 {
         System.out.println("sum : " + sum);
         
         m = 0;
-        for(i = 0, k = wordInStr.length - words.length + 1; i < k; i++)
+        for(i = 0, k = wordInStr.length - words.length * wordsLength + 1; i < k; i++)
         {
             if(wordInStr[i] != NOT)
             {
                 i1 = i;
-                for(j = i; j < i + words.length; j++)
+                for(j = i; j < i + words.length * wordsLength; j += wordsLength)
 //                for(j = i + words.length; i < j && i < k; i++)
                 {
                     m += wordInStr[j];
                 }
                 
+                System.out.println(" m : " + m);
+                
                 if(sum == m)
                 {
-                    result.add(i1 * words[0].length());
+//                    result.add(i1 * words[0].length());
+                    result.add(i1);
                 }
                 m = 0;
             }

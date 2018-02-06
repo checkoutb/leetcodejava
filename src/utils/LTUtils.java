@@ -152,12 +152,39 @@ public class LTUtils
         }
     }
     
+    public static void showArrayOfArray(int[][] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        Integer[][] arr2 = new Integer[arr.length][arr[0].length];
+        for(int i = 0; i < arr.length; i++)
+        {
+            for(int j = 0; j < arr[0].length; j++)
+            {
+                arr2[i][j] = arr[i][j];
+            }
+        }
+        showArrayOfArray(arr2);
+    }
+    
+    public static void showArrayOfArray(Object[][] arr)
+    {
+        for(int i = 0; i < arr.length; i++)
+        {
+            showArray(arr[i]);
+            System.out.println();
+        }
+    }
+    
     public static void showArray(Object[] arr)
     {
         for(int i = 0; i < arr.length; i++)
         {
             System.out.print(arr[i] + ", ");
-            if(i % 5 == 0)
+            if(i % 5 == 4)
             {
                 System.out.println();
             }

@@ -1,6 +1,7 @@
 package utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import pojo.ListNode;
@@ -150,6 +151,85 @@ public class LTUtils
                 }
             }
         }
+    }
+    
+    
+    public static void showArrayOfArrayOneRowOneLine(char[][] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        int rows = arr.length;
+        for(int i = 0; i < rows; i++)
+        {
+            showArrayNoNewLine(arr[i]);
+            System.out.println();
+        }
+        System.out.println();
+    }
+    
+    public static void showArrayNoNewLine(char[] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        System.out.print(Arrays.toString(arr));
+    }
+    
+    public static void showArrayOfArrayOneRowOneLine(int[][] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        int rows = arr.length;
+        for(int i = 0; i < rows; i++)
+        {
+            showArrayNoNewLine(arr[i]);
+            System.out.println();
+        }
+        System.out.println();
+    }
+    
+    public static void showArrayNoNewLine(int[] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        System.out.print(Arrays.toString(arr));
+    }
+    
+    public static void showArrayOfArrayOneRowOneLine(Object[][] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        int rows = arr.length;
+        for(int i = 0; i < rows; i++)
+        {
+            showArrayNoNewLine(arr[i]);
+            System.out.println();
+        }
+        System.out.println();
+    }
+    
+    public static void showArrayNoNewLine(Object[] arr)
+    {
+        if(arr == null)
+        {
+            System.out.println(" is null ");
+            return;
+        }
+        System.out.print(Arrays.toString(arr));
     }
     
     public static void showArrayOfArray(int[][] arr)

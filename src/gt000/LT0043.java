@@ -31,7 +31,7 @@ public class LT0043 {
     
     
     
-    
+    // beats 21%
     public static String Lt0043a(String num1, String num2)
     {
         StringBuilder sb = new StringBuilder();

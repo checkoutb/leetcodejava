@@ -2,6 +2,7 @@ package utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import pojo.ListNode;
@@ -128,6 +129,13 @@ public class LTUtils
         }
     }
     
+    public static void showListOfList(List<List<Integer>> list)
+    {
+        for(List<Integer> li : list)
+        {
+            System.out.println(li);
+        }
+    }
     
     public static void showList(List<?> list)
     {

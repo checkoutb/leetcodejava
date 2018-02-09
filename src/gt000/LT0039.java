@@ -18,6 +18,18 @@ public class LT0039 {
         int[] candidates = {2, 3, 6, 7};
         int target = 7;
         
+        candidates = new int[]{1};
+        target = 1;
+        
+        candidates = new int[]{2};
+        target = 1;
+        
+        candidates = new int[]{1,2};
+        target = 3;
+        
+        candidates = new int[]{2,3,5};
+        target = 6;
+        
         List<List<Integer>> result = Lt0039(candidates, target);
         
         LTUtils.showListOfList(result);
@@ -44,8 +56,8 @@ public class LT0039 {
         
 //        if()
         int i = 0;
-        int length = candidates.length;
-        for(i = length - 1; i >= 0; i--)
+        int length = candidates.length - 1;
+        for(i = length; i >= 0; i--)
         {
             if(candidates[i] <= target)
             {
@@ -64,9 +76,87 @@ public class LT0039 {
         
         int maxCount = target / candidates[0];
         
-//        if()
         
         
+        int[] count = null;
+        boolean flag = true;
+        int j = 0;
+        int sum = 0;
+        for(i = 2; i <= maxCount; i++)
+        {
+            count = new int[i];
+            flag = true;
+            while(flag)
+            {
+                
+                
+                System.out.println(Arrays.toString(count));
+                
+                
+                
+                flag = false;
+                for(j = 0; j < i; j++)          // ...
+                {
+                    System.out.print(j + ", ");
+                    if(count[j] != length)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                
+                sum = 0;
+                
+                
+                
+//                System.out.println(i + ", " + count.length);
+                
+                
+                
+                
+                for(j = 0; j < i; j++)
+                {
+                    sum += candidates[count[j]];
+                }
+                if(sum == target)
+                {
+                    part = new LinkedList<>();
+                    for(j = 0; j < i; j++)
+                    {
+                        part.add(candidates[count[j]]);
+                    }
+                    
+//                    System.out.println(Arrays.toString(count));
+                    
+                    result.add(part);
+                }
+//                if(sum > target)
+//                {
+//                    break;
+//                }
+                for(j = i - 1; j >= 0; j--)
+                {
+                    if(count[j] < length)
+                    {
+                        if(j == 0)
+                        {
+                            count[j]++;
+                            break;
+                        }
+                        else
+                        {
+                            if(count[j] >= count[j - 1])
+                            {
+                                count[j]++;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                
+            }
+        }
         
         
         

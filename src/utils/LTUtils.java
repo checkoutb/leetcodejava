@@ -148,16 +148,17 @@ public class LTUtils
         }
         else
         {
-            int i = 0;
-            for(Object o : list)
-            {
-                System.out.print(o + ", ");
-                i++;
-                if(i % 5 == 0)
-                {
-                    System.out.println();
-                }
-            }
+//            int i = 0;
+//            for(Object o : list)
+//            {
+//                System.out.print(o + ", ");
+//                i++;
+//                if(i % 5 == 0)
+//                {
+//                    System.out.println();
+//                }
+//            }
+            System.out.println(list);
         }
     }
     
@@ -263,33 +264,35 @@ public class LTUtils
         for(int i = 0; i < arr.length; i++)
         {
             showArray(arr[i]);
-            System.out.println();
+//            System.out.println();
         }
     }
     
     public static void showArray(Object[] arr)
     {
-        for(int i = 0; i < arr.length; i++)
-        {
-            System.out.print(arr[i] + ", ");
-            if(i % 5 == 4)
-            {
-                System.out.println();
-            }
-        }
-        System.out.println();
+//        for(int i = 0; i < arr.length; i++)
+//        {
+//            System.out.print(arr[i] + ", ");
+//            if(i % 5 == 4)
+//            {
+//                System.out.println();
+//            }
+//        }
+//        System.out.println();
+        System.out.println(Arrays.toString(arr));
     }
     
     public static void showArray(int[] arr) {
-        for(int i = 0; i < arr.length; i++)
-        {
-            System.out.print(arr[i] + ", ");
-            if(i % 5 == 4)
-            {
-                System.out.println();
-            }
-        }
-        System.out.println();
+//        for(int i = 0; i < arr.length; i++)
+//        {
+//            System.out.print(arr[i] + ", ");
+//            if(i % 5 == 4)
+//            {
+//                System.out.println();
+//            }
+//        }
+//        System.out.println();
+        System.out.println(Arrays.toString(arr));
     }
     
     public static void showListNode(ListNode head)

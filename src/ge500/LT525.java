@@ -18,8 +18,8 @@ public class LT525 {
 
     
     
-    // ...leetCode��ֻ��ʾ��500ms������������Σ�һ��700ms��һ��1000ms�����󲿷ֶ���50-100ms�ġ�������ôŪ�ġ���
-    // ��ô��ģ�Ӧ��ֻ�Ǳ���һ��İɡ��������ǵ�Ӧ����O(n)�İɡ����������O(n^2)����O(logN)�ˡ�
+    // ...leetCode上只显示到500ms，这个试了两次，一次700ms，一次1000ms。。大部分都是50-100ms的。。。怎么弄的。。
+    // 这么快的，应该只是遍历一遍的吧。反正他们的应该是O(n)的吧。我这个好像O(n^2)或者O(logN)了。
     public static int Lt525(int[] nums)
     {
         int[] sums = new int[nums.length + 1];

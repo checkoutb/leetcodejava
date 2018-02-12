@@ -70,7 +70,7 @@ public class LT0048 {
 
 rotate the image in-place
 
-对角三角,不，只要遍历1/4
+瀵硅涓夎,涓嶏紝鍙閬嶅巻1/4
 
 len = matrix.length - 1;
 [i,j],[j,len-i],[len-i,len-j],[len-j,i]

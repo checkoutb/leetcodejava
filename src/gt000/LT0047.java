@@ -154,7 +154,7 @@ public class LT0047 {
         
         for(Integer in : not)
         {
-            List<Integer> used2 = new ArrayList<>(used.size() + 1);         // ¶¼Òª·ÅÀïÃæ¡£¡£
+            List<Integer> used2 = new ArrayList<>(used.size() + 1);         // éƒ½è¦æ”¾é‡Œé¢ã€‚ã€‚
             used2.addAll(used);
             used2.add(in);
             List<Integer> not2 = new ArrayList<>(not.size());

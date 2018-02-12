@@ -142,7 +142,7 @@ public class LT0045 {
 //        int t = len;
         for(i = len - 1; i > 0;)
         {
-            // Ì°ÐÄ
+            // è´ªå¿ƒ
             for(j = 0; j < len; j++)
             {
                 if(nums[j] >= i)

@@ -21,7 +21,7 @@ public class LT0051 {
 
     
     // beats 6.33%.
-    // ²»Çå³ş ÎªÊ²Ã´ »á²úÉúÖØ¸´µÄÖµ£¬ĞèÒªHashSetÀ´¹ıÂËÒ»±é¡£¡£¡£
+    // ä¸æ¸…æ¥š ä¸ºä»€ä¹ˆ ä¼šäº§ç”Ÿé‡å¤çš„å€¼ï¼Œéœ€è¦HashSetæ¥è¿‡æ»¤ä¸€éã€‚ã€‚ã€‚
     public List<List<String>> Lt0051(int n)
     {
         List<List<String>> result = new LinkedList<>();

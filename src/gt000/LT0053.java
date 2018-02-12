@@ -17,6 +17,8 @@ public class LT0053 {
         System.out.println(Lt0053(nums));
     }
     
+    
+    // beats 1.45%...
     public static int Lt0053(int[] nums)
     {
         int result = 0;

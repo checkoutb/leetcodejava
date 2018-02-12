@@ -33,7 +33,7 @@ public class LT10 {
     }
     
     
-    // ... failed£¬ÔİÊ±·ÅÆúÁË£¬Ó¦¸ÃÊÇµİ¹éµÄ°É¡£
+    // ... failedï¼Œæš‚æ—¶æ”¾å¼ƒäº†ï¼Œåº”è¯¥æ˜¯é€’å½’çš„å§ã€‚
     public static boolean Lt10b(String s, String p)
     {
         boolean result = false;
@@ -80,9 +80,9 @@ public class LT10 {
                         }
                     }
                 }
-                else    // ²»Æ¥Åä
+                else    // ï¿½ï¿½Æ¥ï¿½ï¿½
                 {
-                    // Ìø¹ı
+                    // ï¿½ï¿½ï¿½ï¿½
                     if((pi+1) < p.length() && '*' == p.charAt(pi+1))
                     {
                         pi++;
@@ -96,7 +96,7 @@ public class LT10 {
             }
         }
         
-        // back, s±éÀúÍê£¬µ«ÊÇp»¹ÓĞÊ£Óà¡£
+        // back, séå†å®Œï¼Œä½†æ˜¯pè¿˜æœ‰å‰©ä½™ã€‚
         if(pi == p.length())
         {
             return true;
@@ -252,13 +252,13 @@ public class LT10 {
 
 
 Some examples:
-isMatch("aa","a") ¡ú false
-isMatch("aa","aa") ¡ú true
-isMatch("aaa","aa") ¡ú false
-isMatch("aa", "a*") ¡ú true
-isMatch("aa", ".*") ¡ú true
-isMatch("ab", ".*") ¡ú true
-isMatch("aab", "c*a*b") ¡ú true
+isMatch("aa","a") ï¿½ï¿½ false
+isMatch("aa","aa") ï¿½ï¿½ true
+isMatch("aaa","aa") ï¿½ï¿½ false
+isMatch("aa", "a*") ï¿½ï¿½ true
+isMatch("aa", ".*") ï¿½ï¿½ true
+isMatch("ab", ".*") ï¿½ï¿½ true
+isMatch("aab", "c*a*b") ï¿½ï¿½ true
 
 "aa", ".."
 

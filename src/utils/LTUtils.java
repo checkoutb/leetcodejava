@@ -2,9 +2,10 @@ package utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
+import pojo.Interval;
 import pojo.ListNode;
 import pojo.TreeNode;
 
@@ -323,6 +324,20 @@ public class LTUtils
         return head;
     }
     
+    public static List<Interval> convertIntArray2ListInterval(int[][] array)
+    {
+        List<Interval> result = new LinkedList<>();
+        
+        int len = array.length;
+        Interval val = null;
+        for(int i = 0; i < len; i++)
+        {
+            val = new Interval(array[i][0], array[i][1]);
+            result.add(val);
+        }
+        return result;
+    }
+    
     public static void main(String[] args)
     {
         Integer[] array = {0,1,2,3,4,5,6,7,8,9};
@@ -344,31 +359,6 @@ public class LTUtils
     }
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

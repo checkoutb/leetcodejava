@@ -1,5 +1,9 @@
 package gt000;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 72. Edit Distance
@@ -20,9 +24,133 @@ public class LT0072 {
 //        word1 = "sea";
 //        word2 = "eat";
         
-        System.out.println(Lt0072(word1, word2));
+        System.out.println(Lt0072b(word1, word2));
     }
 
+    
+    public static int Lt0072b(String word1, String word2)
+    {
+        int result = 0;
+        
+        if(word1.equals(word2))
+        {
+            return 0;
+        }
+        
+        int len1 = word1.length();
+        int len2 = word2.length();
+        
+        char[] chArr1 = word1.toCharArray();
+        char[] chArr2 = word2.toCharArray();
+        
+        int i1 = 0, i2 = 0;
+        int minIndex = -1;
+        
+        Map<Character, List<Integer>> map = new HashMap<>();
+        
+        char t1;
+        Integer k1;
+        
+        // word1 中的每个字符 在 word2 中出现的位置。
+//        for(i1 = 0; i1 < len1; i1++)
+//        {
+//            t1 = chArr1[i1];
+//            for(i2 = 0; i2 < len2; i2++)
+//            {
+//                if(t1 == chArr2[i2])
+//                {
+//                    if(map.containsKey(t1))
+//                    {
+//                        map.get(t1).add(i2);
+//                    }
+//                    else
+//                    {
+//                        map.put(t1, new ArrayList<>());
+//                        map.get(t1).add(i2);
+//                    }
+//                }
+//            }
+//        }
+        
+        for(i1 = 0; i1 < len1; i1++)
+        {
+            if(!map.containsKey(chArr1[i1]))
+            {
+                map.put(chArr1[i1], new ArrayList<>());
+            }
+        }
+        
+        for(i2 = 0; i2 < len2; i2++)
+        {
+            if(map.containsKey(chArr2[i2]))
+            {
+                map.get(chArr2[i2]).add(i2);
+            }
+        }
+        
+        int maxIndex = 0;
+        List<Integer> list = null;
+        
+        for(i1 = 0; i1 < len1; i1++)
+        {
+            list = map.get(chArr1[i1]);
+            for(Integer i : list)
+            {
+                i2 = i1 - 1;
+                while(i2 >= 0)
+                {
+                    
+                    i2--;
+                }
+                
+                i2 = i1 + 1;
+                while(i2 < len1)
+                {
+                    
+                    i2++;
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        return result;
+    }
+    
+    @Deprecated
+    public static int Lt0072a(String word1, String word2)
+    {
+        int result = 0;
+        
+        String shortWord = null;
+        String longWord = null;
+        
+        if(word1.length() > word2.length())
+        {
+            shortWord = word2;
+            longWord = word1;
+        }
+        else
+        {
+            shortWord = word1;
+            longWord = word2;
+        }
+        
+        int ShLen = shortWord.length();
+        int LoLen = longWord.length();
+        
+        char[] shCh = shortWord.toCharArray();
+        char[] loCh = longWord.toCharArray();
+        
+        
+        return result;
+    }
+    
+    
     // failed
     public static int Lt0072(String word1, String word2)
     {

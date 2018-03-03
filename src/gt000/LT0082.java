@@ -16,6 +16,7 @@ public class LT0082
         
     }
 
+    // 1ms, 看到一个直接用=，毕竟=的必然val相同。
     public static ListNode Lt0082(ListNode head)
     {
         if(head == null || head.next == null)

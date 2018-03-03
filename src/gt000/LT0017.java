@@ -9,19 +9,19 @@ import utils.LTUtils;
 /**
  * Letter Combinations of a Phone Number
  * */
-public class LT0011 {
+public class LT0017 {
 
     public static void main(String[] args) {
         
         String d = "23";
         d = "22";
         
-        LTUtils.showList(Lt0011(d));
+        LTUtils.showList(Lt0017(d));
     }
 
     
     // beats 23%.
-    public static List<String> Lt0011(String digits)
+    public static List<String> Lt0017(String digits)
     {
         if("".equals(digits))
         {

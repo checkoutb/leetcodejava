@@ -104,7 +104,8 @@ public class LTUtils
                 node = nodeList.get(i);
                 if(node == null)
                 {
-                    sb.append("   NaN");
+//                    sb.append("   NaN");
+                    sb.append("    -");
                     tempList.add(null);
                     tempList.add(null);
                 }

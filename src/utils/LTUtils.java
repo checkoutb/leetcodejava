@@ -68,6 +68,11 @@ public class LTUtils
         return nodeArray;
     }
     
+    public static TreeNode[] convertArrayToTreeArray2(Integer ... a)
+    {
+        return LTUtils.convertArrayToTreeArray(a);
+    }
+    
     /**
      * 意思意思。先用着。
      * */

@@ -110,7 +110,7 @@ public class LTUtils
                 if(node == null)
                 {
 //                    sb.append("   NaN");
-                    sb.append("    -");
+                    sb.append("    %");
                     tempList.add(null);
                     tempList.add(null);
                 }

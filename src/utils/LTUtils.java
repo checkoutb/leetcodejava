@@ -7,6 +7,7 @@ import java.util.List;
 
 import pojo.Interval;
 import pojo.ListNode;
+import pojo.TreeLinkNode;
 import pojo.TreeNode;
 
 public class LTUtils 
@@ -71,6 +72,38 @@ public class LTUtils
     public static TreeNode[] convertArrayToTreeArray2(Integer ... a)
     {
         return LTUtils.convertArrayToTreeArray(a);
+    }
+
+    public static TreeLinkNode[] convertArrayToTreeLinkNode(Integer[] array)
+    {
+        TreeNode[] arr1 = LTUtils.convertArrayToTreeArray(array);
+        return LTUtils.convertTreeNodeArray2TreeLinkNodeArray(arr1);
+    }
+
+    public static TreeLinkNode[] convertArrayToTreeLinkNode2(Integer... a)
+    {
+        TreeNode[] arr1 = LTUtils.convertArrayToTreeArray2(a);
+        return LTUtils.convertTreeNodeArray2TreeLinkNodeArray(arr1);
+    }
+
+    private static TreeLinkNode[] convertTreeNodeArray2TreeLinkNodeArray(TreeNode[] arr1)
+    {
+        TreeLinkNode[] arr2 = new TreeLinkNode[arr1.length];
+        LTUtils.recursionConvertTreeNode2TreeLinkNode(arr2, arr1[0], 0, null);
+        return arr2;
+    }
+    
+    private static TreeLinkNode recursionConvertTreeNode2TreeLinkNode(TreeLinkNode[] arr2, TreeNode node, int index, TreeLinkNode parent)
+    {
+        if (node == null)
+        {
+            return null;
+        }
+        arr2[index] = new TreeLinkNode(node.val);
+        arr2[index].parent = parent;
+        arr2[index].left = recursionConvertTreeNode2TreeLinkNode(arr2, node.left, index * 2 + 1, arr2[index]);
+        arr2[index].right = recursionConvertTreeNode2TreeLinkNode(arr2, node.right, index * 2 + 2, arr2[index]);
+        return arr2[index];
     }
     
     /**
@@ -344,6 +377,23 @@ public class LTUtils
         return result;
     }
     
+    public static List<List<Integer>> convertArrayArray2ListList(int[][] array)
+    {
+        List<List<Integer>> result = new ArrayList<>(array.length);
+        List<Integer> ele = null;
+        
+        for(int i = 0; i < array.length; i++)
+        {
+            ele = new ArrayList<>(array[i].length);
+            for(int j = 0; j < array[i].length; j++)
+            {
+                ele.add(array[i][j]);
+            }
+            result.add(ele);
+        }
+        return result;
+    }
+    
     public static void main(String[] args)
     {
         Integer[] array = {0,1,2,3,4,5,6,7,8,9};
@@ -364,8 +414,4 @@ public class LTUtils
         showTree(tree[0], 6);
     }
 
-
-    
-    
-    
 }

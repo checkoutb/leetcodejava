@@ -30,7 +30,7 @@ public class LTUtils
     {
         if(array.length == 0 || array[0] == null)
         {
-            return new TreeNode[0];
+            return new TreeNode[1];
         }
         
         TreeNode[] nodeArray = new TreeNode[array.length];
